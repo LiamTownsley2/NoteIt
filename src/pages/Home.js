@@ -2,6 +2,7 @@ import { Carousel } from '../components';
 import styled from 'styled-components';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { Link } from 'react-router-dom';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,6 +31,10 @@ const PageParent = styled.div`
 const CTA = styled.div`
   margin-top: 50px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const HeaderText = styled.h1`
@@ -43,24 +48,6 @@ const SubtitleText = styled.h2`
     margin: 0px 300px;
 `;
 
-const CallToAction = styled.button`
-  background: none;
-  border: 3px solid #e74c3c;
-  color: white;
-  margin: 20px 0px;
-  padding: 10px 30px;
-  font-size: 20px;
-  border-radius: 15px;
-  transition: background 0.2s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    background: #c0392b;
-  }
-`;
-
-
-
 const Home = () => {
   return (
     <PageParent>
@@ -69,7 +56,7 @@ const Home = () => {
       <CTA>
         <HeaderText>Join Us!</HeaderText>
         <SubtitleText>We are always accepting new creators on our site! If you would like to get your own personal News Letter that you can customise and send out to friends, you can do so by clicking on the button below.</SubtitleText>
-        <CallToAction>Sign Up Now!</CallToAction>
+        <Link className="a-cta-btn" to="/sign-up">Sign Up Now!</Link>
       </CTA>
     </PageParent>
   );

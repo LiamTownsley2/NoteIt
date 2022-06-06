@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
@@ -18,21 +19,11 @@ const NavText = styled.p`
 `;
 
 const NavButton = styled.button`
-    border: 1px solid #e74c3c;
-    border-radius: 10px;
-    padding: 10px 30px;
-    background: none;
-    color: white;
-    transition: background-color 0.3s ease-in;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #c0392b;
-    }
+    
 `;
 
 
-const HomeLink = styled.a`
+const HomeLink = styled.p`
     color: white;
     font-size: 25px;
     text-decoration: none;
@@ -45,11 +36,11 @@ const AltText = styled.span`
 export const NavigationBar = ({ page_author }) => {
     return (
         <NavBar>
-            <HomeLink href="https://google.com">Note<AltText>It</AltText></HomeLink>
+            <Link className="a-no-deco" to="/"><HomeLink>Note<AltText>It</AltText></HomeLink></Link>
 
             {(typeof page_author == 'string') ? <NavText>{page_author}'s News Letter</NavText> : <></>}
 
-            <NavButton id="nav-sign-in">Sign In</NavButton>
+            <Link className="a-sign-in-btn" to="/sign-in">Sign In</Link>
         </NavBar>
     )
 }
