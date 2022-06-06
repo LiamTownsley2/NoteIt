@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import Slider from './Slider';
 
@@ -30,12 +29,11 @@ const ViewMore = styled.button`
   }
 `;
 
-const Carousel = ({ scroll_speed = 35 }) => {
-    const [speed, setSpeed] = useState(scroll_speed);
+const Carousel = () => {
     return <CarouselParent>
         <HeaderText>View Newsletters from our Community!</HeaderText>
         <SubtitleText>You can view the news letters for members of our community.</SubtitleText>
-        <Slider speed={speed} />
+        <Slider />
         <ViewMore>View More</ViewMore>
     </CarouselParent>;
 

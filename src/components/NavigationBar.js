@@ -18,11 +18,6 @@ const NavText = styled.p`
     font-size: 20px;
 `;
 
-const NavButton = styled.button`
-    
-`;
-
-
 const HomeLink = styled.p`
     color: white;
     font-size: 25px;
